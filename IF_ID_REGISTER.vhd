@@ -24,7 +24,7 @@ end entity ; -- IF_ID_REGISTER
 architecture arch of IF_ID_REGISTER is
 begin
 
-	register_behaviour : process( sensitivity_list )
+	register_behaviour : process( clk )
 	begin
 		if clr = '1' then
 			reg_d_OUT <= "00000";

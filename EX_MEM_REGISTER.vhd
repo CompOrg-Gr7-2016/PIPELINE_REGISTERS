@@ -1,4 +1,4 @@
-entity EM_MEM_REGISTER is
+entity EX_MEM_REGISTER is
   port (
 	clk : in std_logic;
 
@@ -26,9 +26,9 @@ entity EM_MEM_REGISTER is
 
 	valid : out std_logic;
   ) ;
-end entity ; -- EM_MEM_REGISTER
+end entity ; -- EX_MEM_REGISTER
 
-architecture arch of EM_MEM_REGISTER is
+architecture arch of EX_MEM_REGISTER is
 begin
 
 	register_behaviour : process( clk )
@@ -40,7 +40,7 @@ begin
 		if rising_edge(clk) then
 			if stall = '0' then
 				valid <= '1';
-				
+
 				reg_write_OUT <= reg_write_OUT;
 				mem_to_reg_OUT <= mem_to_reg_OUT;
 				mem_write_OUT <= mem_write_OUT;
